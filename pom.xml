@@ -1,0 +1,14 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.benek</groupId>
+  <artifactId>hola-spring-app</artifactId>
+  <version>0.1-SNAPSHOT</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>6.1.12</version>
+    </dependency>
+  </dependencies>
+</project>
