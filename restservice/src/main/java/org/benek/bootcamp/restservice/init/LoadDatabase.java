@@ -16,13 +16,15 @@ public class LoadDatabase {
     @Bean
     CommandLineRunner initDatabase(EmpleadoRepository empleadoRepository) {
         return args -> {
-            Empleado javier = new Empleado("Javier Ramirez", "CTO");
-            Empleado juan = new Empleado("Juan Rodriguez", "CEO");
-            Empleado blanca = new Empleado("Blanca Pardo", "Project Manager");
+            if (empleadoRepository.count() == 0) {
+                Empleado javier = new Empleado("Javier Ramirez", "CTO");
+                Empleado juan = new Empleado("Juan Rodriguez", "CEO");
+                Empleado blanca = new Empleado("Blanca Pardo", "Project Manager");
 
-            log.info("Carga inicial: {}", empleadoRepository.save(javier));
-            log.info("Carga inicial: {}", empleadoRepository.save(juan));
-            log.info("Carga inicial: {}", empleadoRepository.save(blanca));
+                log.info("Carga inicial: {}", empleadoRepository.save(javier));
+                log.info("Carga inicial: {}", empleadoRepository.save(juan));
+                log.info("Carga inicial: {}", empleadoRepository.save(blanca));
+            }
         };
     }
 
